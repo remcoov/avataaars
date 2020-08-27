@@ -87,7 +87,7 @@ Only hex (3-digit, 6-digit and 8-digit) values are allowed. For example: `FF0000
 `kurt`, `prescription01`, `prescription02`, `round`, `sunglasses` or `wayfarers`
 
 #### facialHair
-`medium`, `light`, `majestic`, `fancy` or magnum
+`medium`, `light`, `majestic`, `fancy` or `magnum`
 
 #### facialHairColor
 `auburn`, `black`, `blonde`, `brown`, `platinum` or `red`
