@@ -30,6 +30,7 @@ class AvataaarsService extends Component
     // =========================================================================
 
     public function avataaar(array $options = []) : string {
+        
         $defaultOptions = [
             'seed' => substr(md5(rand()),0,8),
             'radius' => 0, // max 50
@@ -73,7 +74,7 @@ class AvataaarsService extends Component
             .( $finalOptions['eyebrow'] ? 'eyebrow[]='.$finalOptions['eyebrow'].'&' : NULL )
             .( $finalOptions['mouth'] ? 'mouth[]='.$finalOptions['mouth'].'&' : NULL )
             .( $finalOptions['skin'] ? 'skin[]='.$finalOptions['skin'].'&' : NULL )
-        , '&');
+        ,'&');
 
         return $url;
     }

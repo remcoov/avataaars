@@ -22,7 +22,7 @@ To install the plugin, follow these instructions.
 
 ## Using Avataaars
 
-In your twig templates, you can create a lot of different Avataaars by playing with all the optional settings. The Avataaar icon used for this Craft CMS plugin, for example, is made with the following settings:
+In your twig templates, you can create a lot of different Avataaars by playing with all the [available settings](#available-settings). The Avataaar icon used for this Craft CMS plugin, for example, is made with the following settings:
 
 ```
 {% set avataaar = craft.avataaars.avataaar({
@@ -109,6 +109,8 @@ Only hex (3-digit, 6-digit and 8-digit) values are allowed. For example: `FF0000
 
 #### skin
 `tanned`, `yellow`, `pale`, `light`, `brown`, `darkBrown` or `black`
+
+## Random Avataaar
 
 You can also output a random Avataaar by simply doing the following:
 

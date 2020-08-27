@@ -28,11 +28,7 @@ use Craft;
  */
 class AvataaarsVariable
 {
-    // Public Methods
-    // =========================================================================
-
     public function avataaar(array $options = [] ) : string {
         return Avataaars::$plugin->avataaarsService->avataaar($options);
     }
-
 }
