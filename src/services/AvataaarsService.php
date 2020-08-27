@@ -50,7 +50,8 @@ class AvataaarsService extends Component
             'eyes' => NULL, // close, cry, default, dizzy, roll, happy, hearts, side, squint, surprised, wink, winkWacky
             'eyebrow' => NULL, // angry, default, flat, raised, sad, unibrow, up
             'mouth' => NULL, // concerned, default, disbelief, eating, grimace, sad, scream, serious, smile, tongue, twinkle, vomit
-            'skin' => NULL // tanned, yellow, pale, light, brown, darkBrown, black
+            'skin' => NULL, // tanned, yellow, pale, light, brown, darkBrown, black
+            'svg' => FALSE // TRUE OR FALSE
         ];
 
         $finalOptions = array_merge($defaultOptions, $options);
@@ -76,7 +77,26 @@ class AvataaarsService extends Component
             .( $finalOptions['skin'] ? 'skin[]='.$finalOptions['skin'].'&' : NULL )
         ,'&');
 
-        return $url;
+        if( $finalOptions['svg'] ) {
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => $url,
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => "",
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 0,
+              CURLOPT_FOLLOWLOCATION => true,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+            $svg = curl_exec($curl);
+            curl_close($curl);
+
+            return $svg;
+        } else {
+            return $url;
+        }
+
     }
 
 }

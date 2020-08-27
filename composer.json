@@ -2,7 +2,7 @@
     "name": "remcoov/avataaars",
     "description": "With Avataaars you can create avatar icons by combining clothes, hair, emotions, accessories, and colors.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft",
         "cms",

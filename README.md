@@ -44,7 +44,8 @@ In your twig templates, you can create a lot of different Avataaars by playing w
     eyes: 'happy',
     eyebrow: 'flat',
     mouth: 'smile',
-    skin: 'light'
+    skin: 'light',
+    svg: false
 }) %}
 
 <img src="{{ avataaar }}" />
@@ -109,6 +110,23 @@ Only hex (3-digit, 6-digit and 8-digit) values are allowed. For example: `FF0000
 
 #### skin
 `tanned`, `yellow`, `pale`, `light`, `brown`, `darkBrown` or `black`
+
+#### svg
+When you'd like to output the Avataaar as raw SVG code, you'd want to set this to `true`. Example:
+
+```
+{% set avataaar = craft.avataaars.avataaar({
+    svg: true
+}) %}
+
+{{ svg(avataaar) }}
+```
+
+If you would like to add a class to the SVG:
+
+```
+{{ svg(avataaar)|attr({ class: 'avataaar-icon' }) }}
+```
 
 ## Random Avataaar
 
