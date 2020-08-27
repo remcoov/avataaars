@@ -1,0 +1,49 @@
+{
+    "name": "remcoov/avataaars",
+    "description": "With Avataaars you can create avatar icons by combining clothes, hair, emotions, accessories, and colors.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "avataaars"
+    ],
+    "support": {
+        "docs": "https://github.com/remcoov/avataaars/blob/master/README.md",
+        "issues": "https://github.com/remcoov/avataaars/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "remcoov",
+            "homepage": "https://github.com/remcoov"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "remcoov\\avataaars\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Avataaars",
+        "handle": "avataaars",
+        "developer": "remcoov",
+        "developerUrl": "https://github.com/remcoov",
+        "documentationUrl": "https://github.com/remcoov/avataaars/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/remcoov/avataaars/master/CHANGELOG.md",
+        "components": {
+            "avataaarsService": "remcoov\\avataaars\\services\\AvataaarsService"
+        },
+        "class": "remcoov\\avataaars\\Avataaars"
+    }
+}
