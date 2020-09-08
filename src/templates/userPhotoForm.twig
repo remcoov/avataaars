@@ -1,0 +1,221 @@
+{% do view.registerAssetBundle("remcoov\\avataaars\\assetbundles\\avataaars\\AvataaarsAsset") %}
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: "Seed"|t,
+    name: 'seed',
+    class: 'formElement',
+    placeholder: 'F.e. your name',
+    autofocus: true
+    })
+}}
+
+{{ forms.selectField({
+    label: "Top"|t,
+    name: 'top',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'longHair': 'Long hair',
+        'shortHair': 'Short hair',
+        'eyepatch': 'Eye patch',
+        'hat': 'Hat',
+        'hijab': 'Hijab',
+        'turban': 'Turban'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Hat color"|t,
+    name: 'hatColor',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'black': 'Black',
+        'blue': 'Blue',
+        'gray': 'Gray',
+        'heather': 'Heather',
+        'pastel': 'Pastel',
+        'pink': 'Pink',
+        'red': 'Red',
+        'white': 'White'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Hair color"|t,
+    name: 'hairColor',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'auburn': 'Auburn',
+        'black': 'Black',
+        'blonde': 'Blonde',
+        'brown': 'Brown',
+        'pastel': 'Pastel',
+        'platinum': 'Platinum',
+        'red': 'Red',
+        'gray': 'Gray'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Accessories"|t,
+    name: 'accessories',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'kurt': 'Kurt',
+        'prescription01': 'Prescription #1',
+        'prescription02': 'Prescription #2',
+        'round': 'Round',
+        'sunglasses': 'Sunglasses',
+        'wayfarers': 'Wayfarers'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Facial hair"|t,
+    name: 'facialHair',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'medium': 'Medium',
+        'light': 'Light',
+        'majestic': 'Majestic',
+        'fancy': 'Fancy',
+        'magnum': 'Magnum'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Facial hair color"|t,
+    name: 'facialHairColor',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'auburn': 'Auburn',
+        'black': 'Black',
+        'blonde': 'Blonde',
+        'brown': 'Brown',
+        'platinum': 'Platinum',
+        'red': 'Red'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Clothes"|t,
+    name: 'clothes',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'blazer': 'Blazer',
+        'sweater': 'Sweater',
+        'shirt': 'Shirt',
+        'hoodie': 'Hoodie',
+        'overall': 'Overall'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Clothes color"|t,
+    name: 'clothesColor',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'black': 'Black',
+        'blue': 'Blue',
+        'gray': 'Gray',
+        'heather': 'Heather',
+        'pastel': 'Pastel',
+        'pink': 'Pink',
+        'red': 'Red',
+        'white': 'White'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Eyes"|t,
+    name: 'eyes',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'close': 'Close',
+        'cry': 'Cry',
+        'default': 'Default',
+        'dizzy': 'Dizzy',
+        'roll': 'Roll',
+        'happy': 'Happy',
+        'hearts': 'Hearts',
+        'side': 'Side',
+        'squint': 'Squint',
+        'surprised': 'Surprised',
+        'wink': 'Wink',
+        'winkWacky': 'Wink wacky'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Eyebrow"|t,
+    name: 'eyebrow',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'angry': 'Angry',
+        'default': 'Default',
+        'flat': 'Flat',
+        'raised': 'Raised',
+        'sad': 'Sad',
+        'unibrow': 'Unibrow',
+        'up': 'Up'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Mouth"|t,
+    name: 'mouth',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'concerned': 'Concerned',
+        'default': 'Default',
+        'disbelief': 'Disbelief',
+        'eating': 'Eating',
+        'grimace': 'Grimace',
+        'sad': 'Sad',
+        'scream': 'Scream',
+        'serious': 'Serious',
+        'smile': 'Smile',
+        'tongue': 'Tongue',
+        'twinkle': 'Twinkle',
+        'vomit': 'Vomit'
+    }
+    })
+}}
+
+{{ forms.selectField({
+    label: "Skin"|t,
+    name: 'skin',
+    class: 'formElement',
+    options: {
+        '': 'Seed default',
+        'tanned': 'Tanned',
+        'yellow': 'Yellow',
+        'pale': 'Pale',
+        'light': 'Light',
+        'brown': 'Brown',
+        'darkBrown': 'Dark brown',
+        'black': 'Black'
+    }
+    })
+}}

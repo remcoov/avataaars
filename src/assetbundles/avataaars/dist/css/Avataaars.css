@@ -1,0 +1,22 @@
+/**
+ * Avataaars plugin for Craft CMS
+ *
+ * Avataaars CSS
+ *
+ * @author    remcoov
+ * @copyright Copyright (c) 2020 remcoov
+ * @link      https://github.com/remcoov
+ * @package   Avataaars
+ * @since     1.0.0
+ */
+
+.userPhoto-result {
+    width: 150px;
+    height: 150px;
+    margin: 10px 10px 10px 0px;
+    border: 1px solid #ccc;
+}
+
+#userPhoto-result-img {
+    width: 100%;
+}

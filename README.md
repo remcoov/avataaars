@@ -134,4 +134,43 @@ You can also output a random Avataaar by simply doing the following:
 
 `<img src="{{ craft.avataaars.avataaar }}" />`
 
-Brought to you by [remcoov](https://github.com/remcoov)
+## Form to set Craft CMS user photo
+
+You can render a form on the front-end to let (logged in) users set a rendered Avataaar as their Craft CMS user photo. To do this, add the following code:
+
+```
+    {% set user = user ?? currentUser %}
+    {% if user %}
+
+        <form method="POST" id="userPhoto-form">
+            {{ craft.avataaars.userPhotoForm|raw }}
+            
+            <input type="hidden" name="width" value="300" />
+            <input type="hidden" name="height" value="300" />
+            <input type="hidden" name="background" value="" /> <!-- f.e. FF0000 -->
+            <input type="hidden" name="margin" value="" /> <!-- max. 25 -->
+
+            {{ csrfInput() }}
+            <div class="userPhoto-result">
+                <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=' id="userPhoto-result-img" />
+            </div>
+
+            <input id="userPhoto-submit" type="submit" value="Set user photo" >
+        </form>
+
+    {% endif %}
+```
+
+The form has a couple of hidden configurations for you as a developer to set, since these are probably too 'technical' for the user: `width`, `height`,`background` and `margin`.
+
+When the user sets the profile picture and you want to do something on either `success` or `error`, you can use the following Javascript code:
+
+```
+window.addEventListener('userPhotoStatus', function (e) {
+    console.log(e.detail.status);
+}, false);
+```
+
+A note beforehand: remember to set the volume for user photo storage.
+
+Brought to you by [remcoov](https://github.com/remcoov) and [kevinmu17](https://github.com/kevinmu17)

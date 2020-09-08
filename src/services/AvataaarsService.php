@@ -14,6 +14,10 @@ use remcoov\avataaars\Avataaars;
 
 use Craft;
 use craft\base\Component;
+use craft\web\View; // FOR SETTING USERPIC
+use craft\elements\Asset; // FOR SETTING USERPIC
+use craft\helpers\Assets; // FOR SETTING USERPIC
+use craft\errors\VolumeException; // FOR SETTING USERPIC
 
 /**
  * AvataaarsService Service
@@ -97,6 +101,38 @@ class AvataaarsService extends Component
             return $url;
         }
 
+    }
+
+    public function userPhotoForm(array $options = []) : string {
+
+        $volumes = Craft::$app->getVolumes();
+        $volumeUid = Craft::$app->getProjectConfig()->get('users.photoVolumeUid');
+
+        if (!$volumeUid || ($volume = $volumes->getVolumeByUid($volumeUid)) === null) {
+            throw new VolumeException(Craft::t('app',
+                'The volume set for user photo storage is not valid.'));
+        }
+        
+        $oldMode = Craft::$app->view->getTemplateMode();
+        Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_CP);
+        $showUserPhotoForm = Craft::$app->view->renderTemplate('avataaars/userPhotoForm');
+        Craft::$app->view->setTemplateMode($oldMode);
+        return $showUserPhotoForm;
+        
+    }
+
+    public function setUserPhoto(string $svgCode) : bool {
+
+        $users = Craft::$app->getUsers();
+        $userId = Craft::$app->getUser()->id;
+        $user = Craft::$app->users->getUserById($userId);
+
+        $filename = Assets::prepareAssetName('avataaar.svg');
+        $tempPath = Assets::tempFilePath($filename);
+        file_put_contents($tempPath, $svgCode);
+        $users->saveUserPhoto($tempPath, $user, $filename);
+
+        return true;
     }
 
 }

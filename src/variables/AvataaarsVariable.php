@@ -31,4 +31,8 @@ class AvataaarsVariable
     public function avataaar(array $options = [] ) : string {
         return Avataaars::$plugin->avataaarsService->avataaar($options);
     }
+
+    public function userPhotoForm(array $options = [] ) : string {
+        return Avataaars::$plugin->avataaarsService->userPhotoForm($options);
+    }
 }
