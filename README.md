@@ -139,26 +139,26 @@ You can also output a random Avataaar by simply doing the following:
 You can render a form on the front-end to let (logged in) users set a rendered Avataaar as their Craft CMS user photo. To do this, add the following code:
 
 ```
-    {% set user = user ?? currentUser %}
-    {% if user %}
+{% set user = user ?? currentUser %}
+{% if user %}
 
-        <form method="POST" id="userPhoto-form">
-            {{ craft.avataaars.userPhotoForm|raw }}
-            
-            <input type="hidden" name="width" value="300" />
-            <input type="hidden" name="height" value="300" />
-            <input type="hidden" name="background" value="" /> <!-- f.e. FF0000 -->
-            <input type="hidden" name="margin" value="" /> <!-- max. 25 -->
+    <form method="POST" id="userPhoto-form">
+        {{ craft.avataaars.userPhotoForm|raw }}
+        
+        <input type="hidden" name="width" value="300" />
+        <input type="hidden" name="height" value="300" />
+        <input type="hidden" name="background" value="" /> <!-- f.e. FF0000 -->
+        <input type="hidden" name="margin" value="" /> <!-- max. 25 -->
 
-            {{ csrfInput() }}
-            <div class="userPhoto-result">
-                <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=' id="userPhoto-result-img" />
-            </div>
+        {{ csrfInput() }}
+        <div class="userPhoto-result">
+            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=' id="userPhoto-result-img" />
+        </div>
 
-            <input id="userPhoto-submit" type="submit" value="Set user photo" >
-        </form>
+        <input id="userPhoto-submit" type="submit" value="Set user photo" >
+    </form>
 
-    {% endif %}
+{% endif %}
 ```
 
 The form has a couple of hidden configurations for you as a developer to set, since these are probably too 'technical' for the user: `width`, `height`,`background` and `margin`.
